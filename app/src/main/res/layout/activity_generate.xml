@@ -45,21 +45,35 @@
         android:id="@+id/generateBtnBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.30"
+        app:layout_constraintGuide_percent="0.28"
         android:orientation="horizontal"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/QRTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.35"
+        app:layout_constraintGuide_percent="0.33"
         android:orientation="horizontal"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/QRBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.90"
+        app:layout_constraintGuide_percent="0.80"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/downloadTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.83"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/downloadBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.91"
         android:orientation="horizontal"/>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -70,8 +84,9 @@
         app:layout_constraintStart_toStartOf="@+id/leftLine"
         app:layout_constraintEnd_toEndOf="@id/rightLine"
         app:layout_constraintTop_toTopOf="@+id/inputTop"
-        app:boxStrokeWidth="0dp"
-        app:boxStrokeWidthFocused="0dp"
+        app:endIconMode="clear_text"
+        app:boxStrokeWidth="2dp"
+        app:boxStrokeWidthFocused="1dp"
         android:paddingVertical="4dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -79,7 +94,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="text"
-            android:hint="@string/QRgenerate"
+            android:hint="@string/text"
             android:layout_marginTop="4dp"
             android:textSize="20sp"
             android:background="@drawable/roundedinput"/>
@@ -107,5 +122,19 @@
         app:layout_constraintStart_toStartOf="@+id/leftLine"
         app:layout_constraintEnd_toEndOf="@id/rightLine"
         app:layout_constraintTop_toTopOf="@+id/QRTop"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/downloadBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/downloadBottom"
+        app:layout_constraintStart_toStartOf="@+id/leftLine"
+        app:layout_constraintEnd_toEndOf="@id/rightLine"
+        app:layout_constraintTop_toTopOf="@+id/downloadTop"
+        android:background="@drawable/custumbotton"
+        android:text="@string/downlaod"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
