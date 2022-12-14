@@ -24,15 +24,29 @@
         android:id="@+id/toptLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.15"
+        app:layout_constraintGuide_percent="0.10"
         android:orientation="horizontal"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/bottomLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.85"
+        app:layout_constraintGuide_percent="0.90"
         android:orientation="horizontal"/>
+
+    <!--<androidx.constraintlayout.widget.Guideline
+        android:id="@+id/exportTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.80"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/exportBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.90"
+        android:orientation="horizontal"/>-->
 
     <ListView
         android:id="@+id/attendaceBox"
@@ -42,5 +56,19 @@
         app:layout_constraintEnd_toEndOf="@id/righttLine"
         app:layout_constraintStart_toStartOf="@id/leftLine"
         app:layout_constraintTop_toTopOf="@id/toptLine" />
+
+    <!--<androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/exportBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/exportBottom"
+        app:layout_constraintEnd_toEndOf="@id/righttLine"
+        app:layout_constraintStart_toStartOf="@id/leftLine"
+        app:layout_constraintTop_toTopOf="@+id/exportTop"
+        android:background="@drawable/custumbotton"
+        android:text="@string/export"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

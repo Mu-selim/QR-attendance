@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
     DatabaseHelper databaseHelper;
-    ArrayList arrayList;
     SimpleDateFormat simpleDateFormat;
     String date = null;
 
@@ -38,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         date = simpleDateFormat.format(new Date());
         databaseHelper = new DatabaseHelper(MainActivity.this);
-        arrayList = databaseHelper.getAllText();
 
         binding.scanBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(MainActivity.this, AttendaceActivity.class);
-                i.putExtra("array_sent", arrayList);
                 startActivity(i);
             }
         });
@@ -77,10 +74,9 @@ public class MainActivity extends AppCompatActivity {
                 requestCode, resultCode, data
         );
         if (result.getContents() != null) {
-            String trainee = result.getContents().toString() + "\n" + date;
-            if (databaseHelper.addText(trainee)) {
-                arrayList.clear();
-                arrayList.addAll(databaseHelper.getAllText());
+            String trainee = result.getContents().toString();
+            if (databaseHelper.addText(trainee, date)) {
+                Toast.makeText(MainActivity.this, "Attendance recorded successfully", Toast.LENGTH_LONG).show();
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
             builder.setTitle("Trainee").

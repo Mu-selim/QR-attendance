@@ -24,7 +24,7 @@
         android:id="@+id/inputTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.05"
+        app:layout_constraintGuide_percent="0.03"
         android:orientation="horizontal"/>
 
     <androidx.constraintlayout.widget.Guideline
@@ -85,8 +85,8 @@
         app:layout_constraintEnd_toEndOf="@id/rightLine"
         app:layout_constraintTop_toTopOf="@+id/inputTop"
         app:endIconMode="clear_text"
-        app:boxStrokeWidth="2dp"
-        app:boxStrokeWidthFocused="1dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
         android:paddingVertical="4dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -97,6 +97,7 @@
             android:hint="@string/text"
             android:layout_marginTop="4dp"
             android:textSize="20sp"
+            android:paddingHorizontal="4dp"
             android:background="@drawable/roundedinput"/>
     </com.google.android.material.textfield.TextInputLayout>
 

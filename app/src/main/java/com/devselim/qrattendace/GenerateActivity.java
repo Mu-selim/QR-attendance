@@ -24,12 +24,20 @@ import com.devselim.qrattendace.databinding.ActivityGenerateBinding;
 
 import java.io.FileNotFoundException;
 import java.io.OutputStream;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Objects;
 
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 
 public class GenerateActivity extends AppCompatActivity {
+
+    /*DatabaseHelper databaseHelper;
+    ArrayList arrayList;
+    SimpleDateFormat simpleDateFormat;
+    String date = null;*/
 
     ActivityGenerateBinding binding;
     private static final int REQUEST_CODE = 1;
@@ -39,12 +47,23 @@ public class GenerateActivity extends AppCompatActivity {
         binding = ActivityGenerateBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        /*simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        date = simpleDateFormat.format(new Date());
+        databaseHelper = new DatabaseHelper(GenerateActivity.this);
+        arrayList = databaseHelper.getAllText();*/
+
         binding.generateQRBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String s = binding.inputField.getText().toString();
                 QRGEncoder encoder = new QRGEncoder(s, null, QRGContents.Type.TEXT, 800);
                 binding.generatedQRImage.setImageBitmap(encoder.getBitmap());
+
+                /*// added code
+                boolean flag = databaseHelper.addText(s, date);
+                if (flag) {
+                    Toast.makeText(GenerateActivity.this, "Added", Toast.LENGTH_LONG).show();
+                }*/
             }
         });
 
