@@ -6,10 +6,8 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -17,27 +15,17 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.View;
 import android.widget.Toast;
 
 import com.devselim.qrattendace.databinding.ActivityGenerateBinding;
 
-import java.io.FileNotFoundException;
 import java.io.OutputStream;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.Objects;
 
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
 
 public class GenerateActivity extends AppCompatActivity {
-
-    /*DatabaseHelper databaseHelper;
-    ArrayList arrayList;
-    SimpleDateFormat simpleDateFormat;
-    String date = null;*/
 
     ActivityGenerateBinding binding;
     private static final int REQUEST_CODE = 1;
@@ -47,37 +35,20 @@ public class GenerateActivity extends AppCompatActivity {
         binding = ActivityGenerateBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        /*simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        date = simpleDateFormat.format(new Date());
-        databaseHelper = new DatabaseHelper(GenerateActivity.this);
-        arrayList = databaseHelper.getAllText();*/
-
-        binding.generateQRBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String s = binding.inputField.getText().toString();
-                QRGEncoder encoder = new QRGEncoder(s, null, QRGContents.Type.TEXT, 800);
-                binding.generatedQRImage.setImageBitmap(encoder.getBitmap());
-
-                /*// added code
-                boolean flag = databaseHelper.addText(s, date);
-                if (flag) {
-                    Toast.makeText(GenerateActivity.this, "Added", Toast.LENGTH_LONG).show();
-                }*/
-            }
+        binding.generateQRBtn.setOnClickListener(view -> {
+            String s = binding.inputField.getText().toString();
+            QRGEncoder encoder = new QRGEncoder(s, null, QRGContents.Type.TEXT, 800);
+            binding.generatedQRImage.setImageBitmap(encoder.getBitmap());
         });
 
-        binding.downloadBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (ContextCompat.checkSelfPermission(GenerateActivity.this,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                    saveImage();
-                } else {
-                    ActivityCompat.requestPermissions(GenerateActivity.this, new String[] {
-                            Manifest.permission.WRITE_EXTERNAL_STORAGE
-                    }, REQUEST_CODE);
-                }
+        binding.downloadBtn.setOnClickListener(view -> {
+            if (ContextCompat.checkSelfPermission(GenerateActivity.this,
+                    Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                saveImage();
+            } else {
+                ActivityCompat.requestPermissions(GenerateActivity.this, new String[] {
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE
+                }, REQUEST_CODE);
             }
         });
     }

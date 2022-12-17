@@ -9,7 +9,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.ArrayList;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-
     private static final String DATABASE_NAME = "recordDB";
     private static final String TABLE_NAME = "attendance";
     private static final String ID = "id";
@@ -45,28 +44,41 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     @SuppressLint("Range")
-    public ArrayList getAllText() {
+    public ArrayList<String> getName() {
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        ArrayList<String> arrayList = new ArrayList<String>();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        ArrayList<String> arrayList = new ArrayList<>();
+        @SuppressLint("Recycle") Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            arrayList.add(
-                    cursor.getString(cursor.getColumnIndex(NAME_COL)) + " " + cursor.getString(cursor.getColumnIndex(DATE_COL))
-            );
+            arrayList.add(cursor.getString(cursor.getColumnIndex(NAME_COL)));
             cursor.moveToNext();
         }
         return arrayList;
     }
 
     @SuppressLint("Range")
-    public ArrayList<String> getName() {
+    public ArrayList<String> getDate() {
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        ArrayList<String> arrayList = new ArrayList<String>();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        ArrayList<String> arrayList = new ArrayList<>();
+        @SuppressLint("Recycle") Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME, null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-            arrayList.add(cursor.getString(cursor.getColumnIndex(NAME_COL)));
+            arrayList.add(cursor.getString(cursor.getColumnIndex(DATE_COL)));
+            cursor.moveToNext();
+        }
+        return arrayList;
+    }
+
+    @SuppressLint("Range")
+    public ArrayList<String> getAllText() {
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        ArrayList<String> arrayList = new ArrayList<>();
+        @SuppressLint("Recycle") Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            arrayList.add(
+                    cursor.getString(cursor.getColumnIndex(NAME_COL)) + " " + cursor.getString(cursor.getColumnIndex(DATE_COL))
+            );
             cursor.moveToNext();
         }
         return arrayList;

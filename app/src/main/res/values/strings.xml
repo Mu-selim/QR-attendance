@@ -2,6 +2,7 @@
     <string name="app_name">QR Attendace</string>
 
     <string name="splash_image">Splash Logo</string>
+    <string name="splash_text">QR attendance</string>
     <string name="scan">Scan QR</string>
     <string name="create">Create QR</string>
     <string name="recorded">Recorded attendance</string>

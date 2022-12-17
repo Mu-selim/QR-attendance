@@ -21,46 +21,69 @@
         android:orientation="vertical"/>
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/imageTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.05"
+        android:orientation="horizontal" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/imageBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.50"
+        android:orientation="horizontal" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/bottonOneTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.30"
-        android:orientation="horizontal" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/bottonOneBottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.40"
-        android:orientation="horizontal" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/bottonTwoTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.45"
-        android:orientation="horizontal" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/bottonTwoBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintGuide_percent="0.55"
         android:orientation="horizontal" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottonOneBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.65"
+        android:orientation="horizontal" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottonTwoTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.70"
+        android:orientation="horizontal" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottonTwoBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.80"
+        android:orientation="horizontal" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/bottonThreeTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.60"
+        app:layout_constraintGuide_percent="0.85"
         android:orientation="horizontal" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/bottonThreeBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.70"
+        app:layout_constraintGuide_percent="0.95"
         android:orientation="horizontal" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageBottom"
+        app:layout_constraintStart_toStartOf="@+id/verticalLeft"
+        app:layout_constraintEnd_toEndOf="@+id/verticalRight"
+        app:layout_constraintTop_toTopOf="@+id/imageTop"
+        android:src="@drawable/qr_code"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/scanBtn"
