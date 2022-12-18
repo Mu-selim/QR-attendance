@@ -103,7 +103,8 @@ The user can export recorded attendance from Database as XLS file with well orga
 
 <h2 id="releases"><b>Releases</b></h2>
 
-* [v1.2.0 latest](https://github.com/Mu-selim/QR-attendance/releases/tag/v1.2.0)
+* [v1.2.1 latest](https://github.com/Mu-selim/QR-attendance/releases/tag/v1.2.0)
+* [v1.2.0](https://github.com/Mu-selim/QR-attendance/releases/tag/v1.2.1)
 * [v1.0.2](https://github.com/Mu-selim/QR-attendance/releases/tag/v1.0.2)
 * [v1.0.1](https://github.com/Mu-selim/QR-attendance/releases/tag/v1.0.1)
 * [v1.0.0 Pre-release](https://github.com/Mu-selim/QR-attendance/releases/tag/v1.0.0)
