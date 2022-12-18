@@ -2,6 +2,7 @@
     <string name="app_name">QR Attendace</string>
 
     <string name="splash_image">Splash Logo</string>
+    <string name="welcome">Welcome</string>
     <string name="splash_text">QR attendance</string>
     <string name="scan">Scan QR</string>
     <string name="create">Create QR</string>
@@ -10,5 +11,6 @@
     <string name="text">Type text</string>
     <string name="QRgenerate">Generate QR</string>
     <string name="downlaod">Download</string>
-    <string name="export">Export as CSV</string>
+    <string name="export">Export as XLS</string>
+    <string name="file_name">Enter file name</string>
 </resources>

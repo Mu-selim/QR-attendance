@@ -35,10 +35,24 @@
         android:orientation="vertical"/>
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/welcomeTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.65"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/welcomeBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.75"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/splashTextTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.70"
+        app:layout_constraintGuide_percent="0.75"
         android:orientation="horizontal"/>
 
     <androidx.constraintlayout.widget.Guideline
@@ -52,28 +66,28 @@
         android:id="@+id/progressTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.89"
+        app:layout_constraintGuide_percent="0.88"
         android:orientation="horizontal"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/progressBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.96"
+        app:layout_constraintGuide_percent="0.97"
         android:orientation="horizontal"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/progressLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.44"
+        app:layout_constraintGuide_percent="0.43"
         android:orientation="vertical"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/progressRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent=".56"
+        app:layout_constraintGuide_percent=".57"
         android:orientation="vertical"/>
     
     <ImageView
@@ -85,6 +99,20 @@
         app:layout_constraintEnd_toEndOf="@+id/rightLine"
         app:layout_constraintTop_toTopOf="@+id/imageTop"
         android:contentDescription="@string/splash_image" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/welcomeBottom"
+        app:layout_constraintStart_toStartOf="@+id/leftLine"
+        app:layout_constraintEnd_toEndOf="@+id/rightLine"
+        app:layout_constraintTop_toTopOf="@+id/welcomeTop"
+        android:text="@string/welcome"
+        android:gravity="center"
+        android:textColor="@color/main_blue"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textAllCaps="false"/>
 
     <TextView
         android:layout_width="0dp"

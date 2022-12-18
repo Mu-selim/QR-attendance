@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QR Attendace</string>
+
+    <string name="splash_image">صورة المقدمة</string>
+    <string name="welcome">مرحبا بك</string>
+    <string name="splash_text">QR attendance</string>
+    <string name="scan">مسح QR</string>
+    <string name="create">إنشاء QR</string>
+    <string name="recorded">الحضور المسجل</string>
+
+    <string name="text">ادخل النص</string>
+    <string name="QRgenerate">إنشاء QR</string>
+    <string name="downlaod">حفظ الكود</string>
+    <string name="export">حفظ الحضور</string>
+    <string name="file_name">ادخل اسم الملف</string>
+</resources>

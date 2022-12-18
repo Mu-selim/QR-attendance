@@ -45,7 +45,7 @@
         android:id="@+id/generateBtnBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.28"
+        app:layout_constraintGuide_percent="0.30"
         android:orientation="horizontal"/>
 
     <androidx.constraintlayout.widget.Guideline
@@ -59,21 +59,21 @@
         android:id="@+id/QRBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.80"
+        app:layout_constraintGuide_percent="0.83"
         android:orientation="horizontal"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/downloadTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.83"
+        app:layout_constraintGuide_percent="0.86"
         android:orientation="horizontal"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/downloadBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="0.91"
+        app:layout_constraintGuide_percent="0.96"
         android:orientation="horizontal"/>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -86,8 +86,7 @@
         app:layout_constraintTop_toTopOf="@+id/inputTop"
         app:endIconMode="clear_text"
         app:boxStrokeWidth="0dp"
-        app:boxStrokeWidthFocused="0dp"
-        android:paddingVertical="4dp">
+        app:boxStrokeWidthFocused="0dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputField"
